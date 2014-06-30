@@ -18,7 +18,7 @@ WHILE 1=1 -- WHILE(True)
 BEGIN
 	SET @DynamicSQLString = @DynamicSQLString + N'
 		SELECT FirstName, LastName
-		FROM ' + (select [Catalog] from @tblCatalog where Id = @intCurrentCatalog) + '.dbo.[User]
+		FROM ' + (select [Catalog] FROM @tblCatalog WHERE Id = @intCurrentCatalog) + '.dbo.[User]
 		WHERE LastName Like ''F%''';
 		
     SET @intCurrentCatalog = @intCurrentCatalog + 1;
